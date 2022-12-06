@@ -8,10 +8,42 @@
 }
 
 .product {
-  width: 25%;
+  width: 24%;
   padding: 15px;
   margin-top: 2em;
   float: left;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.75em;
+}
+.action-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.action-price span {
+  font-weight: bold;
+}
+
+.action-price p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.action-price button {
+  border: 0.8px solid #171817;
+  border-radius: 5px;
+  background-color: white;
+  padding: 6px 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.action-price button:hover {
+  background-color: #171817;
+  color: #fff;
 }
 
 .product img {
@@ -22,11 +54,14 @@
 /* Media Qeuries */
 @media (max-width: 1024px) {
   .product {
-    width: 50%;
+    width: 48%;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
+  .product {
+    width: 48%;
+  }
   .products-container {
     font-size: 0.9em;
   }
@@ -34,6 +69,6 @@
 
 @media (max-width: 480px) {
   .product {
-    width: 100%;
+    width: 48%;
   }
 }
