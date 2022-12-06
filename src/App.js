@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        <NavBar setUser={setUser} user={user} />
         <Routes>
           <Route path="/" element={<Products user={user} />} />
           <Route path="/addproduct" element={<AddProduct />} />
