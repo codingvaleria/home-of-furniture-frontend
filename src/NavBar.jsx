@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/NavBar.css";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -12,9 +13,8 @@ export default function NavBar() {
           </label>
           <label className="logo">Funiture Shop</label>
           <div className="nav-menu">
-            <a to="/">Home</a>
-            <a to="/about">About</a>
-            <a to="/signup">Sign Up</a>
+            <Link to="/">Home</Link>
+            <Link to="/auth">Sign Up</Link>
           </div>
         </nav>
       </div>
