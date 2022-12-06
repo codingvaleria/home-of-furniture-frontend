@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Contact from "./Contact";
 import AddProduct from "./AddProduct";
 import Products from "./Products";
 import NavBar from "./NavBar";
@@ -13,10 +14,23 @@ function App() {
       <Router>
         {showNavBar && <NavBar />}
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route
+            path="/"
+            element={<Products setShowNavBar={setShowNavBar} />}
+          />
           <Route path="/add" element={<AddProduct />} />
-          <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="products/:id" element={<Products />} />
+          <Route
+            path="/contact"
+            element={<Contact setShowNavBar={setShowNavBar} />}
+          />
+          <Route
+            path="/addproduct"
+            element={<AddProduct setShowNavBar={setShowNavBar} />}
+          />
+          <Route
+            path="products/:id"
+            element={<Products setShowNavBar={setShowNavBar} />}
+          />
           <Route path="auth" element={<Auth setShowNavBar={setShowNavBar} />} />
         </Routes>
       </Router>

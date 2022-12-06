@@ -19,8 +19,13 @@
 .action-price {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-top: 10px;
+}
+
+.action-price div {
+  width: 50%;
+  text-align: center;
 }
 
 .action-price span {

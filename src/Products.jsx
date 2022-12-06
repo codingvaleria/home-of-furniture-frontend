@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles/Products.css";
 
-export default function Products() {
+export default function Products({ setShowNavBar }) {
+  setShowNavBar(true);
   return (
     <div className="products-container">
       <div className="product">

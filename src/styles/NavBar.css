@@ -4,13 +4,6 @@
   --white: #fafafa;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
 .navbar {
   width: 100%;
   height: 80px;
@@ -23,7 +16,7 @@ nav {
 }
 
 label.logo {
-  font-size: 35px;
+  font-size: 30px;
   line-height: 80px;
   color: var(--blue);
   text-transform: uppercase;

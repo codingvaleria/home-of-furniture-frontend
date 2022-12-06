@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Login.css";
+import "./styles/SignUp.css";
 
 export default function SignUp({ handleClick }) {
   return (

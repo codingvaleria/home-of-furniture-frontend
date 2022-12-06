@@ -4,7 +4,7 @@ import "./styles/Login.css";
 export default function Login({ handleClick }) {
   return (
     <div>
-      <form action="/" id="form">
+      <form id="form">
         <h1>Login</h1>
         <div class="input-control">
           <label for="username">Username</label>
