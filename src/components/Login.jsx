@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Login({ setShowNavBar, onLogin }) {
-  // setShowNavBar(false)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const [errors, setErrors] = useState([]);
 
   function handleSubmit(e) {
@@ -18,6 +19,7 @@ export default function Login({ setShowNavBar, onLogin }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
+        navigate("/");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

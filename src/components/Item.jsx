@@ -9,9 +9,12 @@ export default function Item({ products, user, search }) {
       {search(products).map((product) => (
         <div className="product" key={product.id}>
           <div className="itemx">
-            <img src={product.image} alt="" />
+            <div
+              className="product-image"
+              style={{ backgroundImage: `url(${product.image})` }}
+            ></div>
             <h3>{product.name}</h3>
-            <p>
+            <p className="product-price">
               Kshs. <span>{product.price}</span>
             </p>
             <p>{product.description.substring(0, 40)}...</p>

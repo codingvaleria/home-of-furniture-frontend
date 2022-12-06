@@ -16,6 +16,15 @@
   border-radius: 4px;
   margin-right: 0.75em;
 }
+
+.product h3 {
+  margin-top: 10px;
+}
+
+.product-price span {
+  color: #000;
+}
+
 .action-price {
   display: flex;
   align-items: center;
@@ -49,6 +58,12 @@
   height: 200px;
 }
 
+.product-image {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+}
 /* Media Qeuries */
 @media (max-width: 1024px) {
   .product {

@@ -17,7 +17,7 @@ export default function NavBar({ setUser, user }) {
         <label htmlFor="check" className="checkbtn">
           <i className="fas fa-bars"></i>
         </label>
-        <label className="logo">Funiture Shop</label>
+        <label className="logo">home of furniture</label>
         <div className="nav-menu">
           {user && (
             <>

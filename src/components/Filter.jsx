@@ -17,7 +17,7 @@ export default function Filter({ input, setFilter, filterProducts, products }) {
             <input
               type="text"
               className="searchTerm"
-              placeholder="Which product are you looking for?"
+              placeholder="What product are you looking for?"
               onChange={(e) => input(e.target.value.toLocaleUpperCase())}
             />
             <button type="submit" className="searchButton">

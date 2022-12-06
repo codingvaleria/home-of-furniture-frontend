@@ -17,11 +17,13 @@
 
 .category-buttons p {
   margin-right: 2em;
-  color: blue;
+  color: black;
+  font-style: italic;
 }
 
 .category-buttons p:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .instruction {
@@ -60,8 +62,8 @@
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #666969;
-  background: #666969;
+  border: 1px solid black;
+  background: black;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
