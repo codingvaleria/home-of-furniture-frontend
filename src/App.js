@@ -21,6 +21,10 @@ function App() {
             path="/addproduct"
             element={<AddProduct setShowNavBar={setShowNavBar} />}
           />
+          <Route
+            path="/:id"
+            element={<AddProduct setShowNavBar={setShowNavBar} />}
+          />
         </Routes>
       </Router>
     </div>
