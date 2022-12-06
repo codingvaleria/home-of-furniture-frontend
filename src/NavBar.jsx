@@ -14,6 +14,7 @@ export default function NavBar() {
           <label className="logo">Funiture Shop</label>
           <div className="nav-menu">
             <Link to="/">Home</Link>
+            <Link to="/contact">Contact</Link>
             <Link to="/auth">Sign Up</Link>
           </div>
         </nav>
