@@ -38,10 +38,6 @@ export default function Products({ user }) {
     );
   }
 
-  const infomations = filter.filter((data) =>
-    keys.some((key) => data[key].toLowerCase().includes(query.toLowerCase()))
-  );
-
   return (
     <div className="products-container">
       <Filter
