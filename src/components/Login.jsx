@@ -1,11 +1,12 @@
 import React from "react";
-import "./styles/Login.css";
+import "../styles/Login.css";
 
-export default function Login({ handleClick }) {
+export default function Login({ setShowNavBar }) {
+  setShowNavBar(false);
   return (
     <div>
       <form id="form">
-        <h1>Login</h1>
+        <h1>Admin Login</h1>
         <div class="input-control">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" />
@@ -18,11 +19,6 @@ export default function Login({ handleClick }) {
 
         <div className="input-control">
           <button type="submit">Signin</button>
-        </div>
-        <div className="input-control">
-          <p className="p">
-            Don't have an account ? <span onClick={handleClick}>Sign Up</span>{" "}
-          </p>
         </div>
       </form>
     </div>
