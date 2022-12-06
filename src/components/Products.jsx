@@ -3,8 +3,7 @@ import "../styles/Products.css";
 import Loading from "./Loading";
 import Item from "./Item";
 
-export default function Products({ setShowNavBar }) {
-  setShowNavBar(true);
+export default function Products({ user }) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,7 +20,7 @@ export default function Products({ setShowNavBar }) {
 
   return (
     <div className="products-container">
-      {isLoading ? <Loading /> : <Item products={products} />}
+      {isLoading ? <Loading /> : <Item products={products} user={user} />}
     </div>
   );
 }

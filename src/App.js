@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddProduct from "./components/AddProduct";
 import Products from "./components/Products";
@@ -8,27 +8,30 @@ import "./App.css";
 
 function App() {
   const [showNavBar, setShowNavBar] = useState(true);
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // automatic login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <Router>
-        {showNavBar && <NavBar />}
+        <NavBar />
         <Routes>
-          <Route
-            path="/"
-            element={<Products setShowNavBar={setShowNavBar} />}
-          />
-          <Route
-            path="/addproduct"
-            element={<AddProduct setShowNavBar={setShowNavBar} />}
-          />
-          <Route
-            path="/:id"
-            element={<AddProduct setShowNavBar={setShowNavBar} />}
-          />
+          <Route path="/" element={<Products user={user} />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/:id" element={<AddProduct />} />
+          <Route path="/login" element={<Login onLogin={setUser} />} />
         </Routes>
       </Router>
     </div>
   );
 }
-
 export default App;
