@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/Products.css";
 
-export default function Item({ products, user }) {
+export default function Item({ products, user, search }) {
   const navigate = useNavigate();
 
   return (
     <div>
-      {products.map((product) => (
+      {search(products).map((product) => (
         <div className="product" key={product.id}>
           <div className="itemx">
             <img src={product.image} alt="" />
@@ -15,7 +15,6 @@ export default function Item({ products, user }) {
               Kshs. <span>{product.price}</span>
             </p>
             <p>{product.description.substring(0, 40)}...</p>
-
             {user && (
               <div className="action-price">
                 <button
