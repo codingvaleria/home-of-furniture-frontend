@@ -1,12 +1,15 @@
 import React from "react";
 import "../styles/NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function NavBar({ setUser, user }) {
+  const navigate = useNavigate();
+
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
+        navigate("/");
       }
     });
   }
@@ -19,9 +22,9 @@ export default function NavBar({ setUser, user }) {
         </label>
         <label className="logo">home of furniture</label>
         <div className="nav-menu">
+          <Link to="/">Home</Link>
           {user && (
             <>
-              <Link to="/">Home</Link>
               <Link to="/addproduct">Add Product</Link>
               <Link onClick={handleLogoutClick}>Logout</Link>
             </>
