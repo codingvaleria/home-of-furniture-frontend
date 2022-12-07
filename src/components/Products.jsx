@@ -7,7 +7,7 @@ import Filter from "./Filter";
 export default function Products({ user }) {
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetch("/products")
@@ -17,7 +17,7 @@ export default function Products({ user }) {
         setFilter(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [isLoading]);
 
   console.log(products);
   const filterProducts = (category) => {
@@ -38,6 +38,17 @@ export default function Products({ user }) {
     );
   }
 
+  // deleting an item
+  function handleDelete(product) {
+    setIsLoading(true);
+    fetch(`/products/${product.id}`, {
+      method: "DELETE",
+    }).then((data) => {
+      console.log(data);
+      setIsLoading(false);
+    });
+  }
+
   return (
     <div className="products-container">
       <Filter
@@ -49,7 +60,12 @@ export default function Products({ user }) {
       {isLoading ? (
         <Loading />
       ) : (
-        <Item products={filter} user={user} search={search} />
+        <Item
+          products={filter}
+          user={user}
+          search={search}
+          handleDelete={handleDelete}
+        />
       )}
     </div>
   );
