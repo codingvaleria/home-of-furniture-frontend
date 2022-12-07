@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/Products.css";
 
-export default function Item({ products, user, search }) {
+export default function Item({ products, user, search, handleDelete }) {
   const navigate = useNavigate();
 
   return (
@@ -12,21 +12,29 @@ export default function Item({ products, user, search }) {
             <div
               className="product-image"
               style={{ backgroundImage: `url(${product.image})` }}
+              onClick={() => {
+                navigate(`/products/${product.id}`);
+              }}
             ></div>
-            <h3>{product.name}</h3>
+            <h3
+              onClick={() => {
+                navigate(`/products/${product.id}`);
+              }}
+            >
+              {product.name}
+            </h3>
             <p className="product-price">
               Kshs. <span>{product.price}</span>
             </p>
             <p>{product.description.substring(0, 40)}...</p>
             {user && (
               <div className="action-price">
-                <button
-                  className="bt1"
-                  onClick={() => navigate(`/${product.id}`)}
-                >
-                  Update Item
+                <button className="bt1">
+                  <a href={`products/edit/${product.id}`}>Update Item</a>
                 </button>
-                <button className="bt2">Delete Item</button>
+                <button className="bt2" onClick={() => handleDelete(product)}>
+                  Delete Item
+                </button>
               </div>
             )}
           </div>
