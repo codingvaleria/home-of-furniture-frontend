@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ setShowNavBar, onLogin }) {
+export default function Login({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -53,6 +53,16 @@ export default function Login({ setShowNavBar, onLogin }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+
+        {errors.length > 0 && (
+          <div className="input-control">
+            {errors.map((error) => (
+              <div className="error">
+                <p>{error}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="input-control">
           <button type="submit">Signin</button>
