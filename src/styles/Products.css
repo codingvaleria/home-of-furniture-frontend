@@ -35,6 +35,10 @@
   margin-top: 10px;
 }
 
+.action-price a {
+  color: black;
+}
+
 .action-price button {
   border: 0.8px solid #171817;
   border-radius: 5px;
@@ -46,7 +50,7 @@
 }
 
 .bt1:hover {
-  background-color: rgb(98, 150, 219);
+  background-color: rgb(113, 151, 114);
   color: #fff;
   border: none;
 }
