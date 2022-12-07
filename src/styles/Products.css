@@ -21,6 +21,10 @@
   margin-top: 10px;
 }
 
+.product h3:hover {
+  cursor: pointer;
+}
+
 .product-price span {
   color: #000;
 }
@@ -42,7 +46,7 @@
 }
 
 .bt1:hover {
-  background-color: rgb(138, 186, 169);
+  background-color: rgb(98, 150, 219);
   color: #fff;
   border: none;
 }
@@ -63,6 +67,10 @@
   background-position: center;
   height: 300px;
   width: 100%;
+}
+
+.product-image:hover {
+  cursor: pointer;
 }
 /* Media Qeuries */
 @media (max-width: 1024px) {

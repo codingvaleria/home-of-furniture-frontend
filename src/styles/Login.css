@@ -49,3 +49,11 @@ span {
 .input-control input:focus {
   outline: 0;
 }
+
+/* Fixes */
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 0;
+}
