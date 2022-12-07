@@ -4,12 +4,12 @@ export default function Form({
   handleFormSubmit,
   handleInputChange,
   formData,
-  id,
+  errors,
 }) {
   return (
     <div className="Product">
       <form id="add-form" onSubmit={handleFormSubmit}>
-        <h1>{id ? "Edit Product Form" : "Add Product Form"}</h1>
+        <h1>Add Product Form</h1>
 
         <div className="input-control">
           <label htmlFor="name">Name</label>
@@ -21,7 +21,16 @@ export default function Form({
             value={formData.name}
           />
         </div>
-
+        <div className="input-control">
+          <label htmlFor="name">Category</label>
+          <input
+            type="text"
+            name="category"
+            placeholder="Choose category e.g Living-Room, Dining-Room, Kitchen, Bedroom..."
+            onChange={handleInputChange}
+            value={formData.category}
+          />
+        </div>
         <div className="input-control">
           <label htmlFor="image">Image</label>
           <input
@@ -53,9 +62,17 @@ export default function Form({
             value={formData.description}
           ></textarea>
         </div>
-
+        <div className="input-group">
+          {errors.length > 0 && (
+            <div style={{ color: "red" }}>
+              {errors.map((error) => (
+                <p key={error}>{error}</p>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="row">
-          <input type="submit" value={id ? "Update Product" : "Add Product"} />
+          <input type="submit" value="Add Product" />
         </div>
       </form>
     </div>
