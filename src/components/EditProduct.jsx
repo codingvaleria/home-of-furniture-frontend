@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "../styles/AddProduct.css";
-import { BASE_URL } from "../config";
 
 export default function EditProduct() {
   const params = useParams();
@@ -27,7 +26,7 @@ export default function EditProduct() {
   // Updating details
   useEffect(() => {
     if (id) {
-      fetch(`${BASE_URL}/products/${id}`)
+      fetch(`/products/${id}`)
         .then((resp) => resp.json())
         .then((item) => {
           setFormData(item);
@@ -38,7 +37,7 @@ export default function EditProduct() {
   // Handling form Submit
   function handleFormSubmit(e) {
     e.preventDefault();
-    fetch(`${BASE_URL}/products/${id}`, {
+    fetch(`/products/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 import "../styles/Product.css";
-import { BASE_URL } from "../config";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -10,7 +9,7 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
 
   const fetchProduct = async () => {
-    fetch(`${BASE_URL}/products/${id}`)
+    fetch(`/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);

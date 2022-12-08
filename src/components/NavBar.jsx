@@ -6,7 +6,7 @@ export default function NavBar({ setUser, user }) {
   const navigate = useNavigate();
 
   function handleLogoutClick() {
-    fetch(`${BASE_URL}/logout`, { method: "DELETE" }).then((r) => {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
         navigate("/");

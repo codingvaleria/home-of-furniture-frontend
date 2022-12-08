@@ -7,14 +7,13 @@ import Login from "./components/Login";
 import ProductDetail from "./components/ProductDetail";
 import EditProduct from "./components/EditProduct";
 import "./App.css";
-import { BASE_URL } from "./config";
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     // automatic login
-    fetch(`${BASE_URL}/me`).then((r) => {
+    fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
