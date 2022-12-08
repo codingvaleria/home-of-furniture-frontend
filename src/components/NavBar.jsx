@@ -1,12 +1,13 @@
 import React from "react";
 import "../styles/NavBar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../config";
 
 export default function NavBar({ setUser, user }) {
   const navigate = useNavigate();
 
   function handleLogoutClick() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
+    fetch(`${BASE_URL}/logout`, { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
         navigate("/");

@@ -3,6 +3,7 @@ import "../styles/Products.css";
 import Loading from "./Loading";
 import Item from "./Item";
 import Filter from "./Filter";
+import { BASE_URL } from "../config";
 
 export default function Products({ user }) {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ export default function Products({ user }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch("/products")
+    fetch(`${BASE_URL}/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -41,7 +42,7 @@ export default function Products({ user }) {
   // deleting an item
   function handleDelete(product) {
     setIsLoading(true);
-    fetch(`/products/${product.id}`, {
+    fetch(`${BASE_URL}/products/${product.id}`, {
       method: "DELETE",
     }).then((data) => {
       console.log(data);
