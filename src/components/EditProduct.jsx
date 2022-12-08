@@ -46,7 +46,7 @@ export default function EditProduct() {
     })
       .then((res) => {
         if (res.ok) {
-          navigate(`/products/${id}`);
+          navigate(`/products`);
         }
       })
       .then((item) => console.log(item));
