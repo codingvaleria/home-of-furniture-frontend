@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import React, { useState } from "react";
 import "../styles/AddProduct.css";
 import Form from "./Form";
+import { BASE_URL } from "../config";
 
 export default function AddProduct() {
   const params = useParams();
@@ -28,7 +29,7 @@ export default function AddProduct() {
   // Handling form Submit
   function handleFormSubmit(e) {
     e.preventDefault();
-    fetch(`products/`, {
+    fetch(`${BASE_URL}products/`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
