@@ -32,7 +32,7 @@ export default function ProductDetail() {
         <div className="info">
           <h1>{product.name}</h1>
           <h2>{product.category}</h2>
-          <h3>Kshs. {product.price}</h3>
+          <h3>{product.price}</h3>
           <p>{product.description}</p>
         </div>
       </div>
