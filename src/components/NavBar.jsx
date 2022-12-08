@@ -10,6 +10,7 @@ export default function NavBar({ setUser, user }) {
     fetch(`${BASE_URL}/logout`, { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
+        localStorage.clear();
         navigate("/");
       }
     });

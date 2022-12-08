@@ -11,12 +11,23 @@ import { BASE_URL } from "./config";
 
 function App() {
   const [user, setUser] = useState(null);
+  useEffect(() => {
+    try {
+      const savedUser = localStorage.getItem("user");
+      if (savedUser) {
+        setUser(JSON.parse(savedUser));
+      }
+    } catch (e) {}
+  });
 
   useEffect(() => {
     // automatic login
     fetch(`${BASE_URL}/me`).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => {
+          setUser(user);
+          localStorage.setItem("user", JSON.stringify(user));
+        });
       }
     });
   }, []);
