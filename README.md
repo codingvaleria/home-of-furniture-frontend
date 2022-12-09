@@ -25,7 +25,7 @@ Links to other files that relate to this API are:
 
 - [Deployed API URL](https://home-of-furniture-api-production.up.railway.app/products)
 - [React Frontend github](https://github.com/codingvaleria/home-of-furniture-frontend)
-- [Deployed Frontend URL](https://unique-zabaione-f0a070.netlify.app/)
+- [Deployed Frontend URL](https://home-of-furnitures-frontend.vercel.app/)
 
 ## Project Features
 
