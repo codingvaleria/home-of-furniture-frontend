@@ -39,6 +39,7 @@ export default function AddProduct() {
       .then((res) => {
         if (res.ok) {
           res.json().then((product) => console.log(product));
+          alert("Product added successfully");
           navigate("/");
         } else {
           res.json().then((errorData) => setErrors(errorData.errors));
